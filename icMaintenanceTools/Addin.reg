@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\IronCAD\IRONCAD 17.0\Applications\FirstAddin]
+@="{6AE87CEF-C966-4938-A945-50D4280F60D0}"
+"LoadOnStartup"=dword:00000000
+"ShowInList"=dword:00000001
+
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\IronCAD\New User Settings\IRONCAD 17.0\Applications\FirstAddin]
+@="{6AE87CEF-C966-4938-A945-50D4280F60D0}"
+"LoadOnStartup"=dword:00000000
+"ShowInList"=dword:00000001

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9738746-BF8A-4E77-B8B2-D1513D300388}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICApiAddin.icMaintenanceTools</RootNamespace>
+    <AssemblyName>icMaintenanceTools</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ic-jp-community.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_icMaintenanceTools.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.38.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.38\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="interop.ICApiIronCAD">
+      <HintPath>ExternDLL\interop.ICApiIronCAD.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Addin.cs" />
+    <Compile Include="ConvertImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EventHandler\Event_AppEvents.cs" />
+    <Compile Include="EventHandler\Event_DocEvents.cs" />
+    <Compile Include="EventHandler\Event_DocHandleEvents.cs" />
+    <Compile Include="EventHandler\Event_DocSelectionEvents.cs" />
+    <Compile Include="EventHandler\Event_ICAddInUtils.cs" />
+    <Compile Include="EventHandler\Event_MouseEvents.cs" />
+    <Compile Include="icapiCommon.cs" />
+    <Compile Include="icMaintenanceToolsMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="icMaintenanceToolsMain.designer.cs">
+      <DependentUpon>icMaintenanceToolsMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlIroncadSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlIroncadSettings.Designer.cs">
+      <DependentUpon>UserControlIroncadSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlIroncadRepair.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlIroncadRepair.Designer.cs">
+      <DependentUpon>UserControlIroncadRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlSystemInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlSystemInformation.Designer.cs">
+      <DependentUpon>UserControlSystemInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUpdateList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUpdateList.Designer.cs">
+      <DependentUpon>UserControlUpdateList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlAllIroncadRepair.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlAllIroncadRepair.Designer.cs">
+      <DependentUpon>UserControlAllIroncadRepair.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="icMaintenanceToolsMain.resx">
+      <DependentUpon>icMaintenanceToolsMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlIroncadSettings.resx">
+      <DependentUpon>UserControlIroncadSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlIroncadRepair.resx">
+      <DependentUpon>UserControlIroncadRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlSystemInformation.resx">
+      <DependentUpon>UserControlSystemInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUpdateList.resx">
+      <DependentUpon>UserControlUpdateList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlAllIroncadRepair.resx">
+      <DependentUpon>UserControlAllIroncadRepair.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole1">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ic-jp-community.snk" />
+    <None Include="Images\3iaoftt.bin" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\icon_All_Ironcad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\repair_thread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\use_oldIME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\icon_icMaintenanceToolsUpdate.png" />
+    <EmbeddedResource Include="Icons\icon_IroncadUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\icon_SystemInformation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\icon_icMaintenanceTools_l.png" />
+    <EmbeddedResource Include="Icons\icon_icMaintenanceTools_s.png" />
+    <EmbeddedResource Include="Icons\icon_IroncadSettings.png" />
+    <EmbeddedResource Include="Icons\icon_IroncadRepair256.png" />
+    <EmbeddedResource Include="Icons\icon_IroncadRepair.png" />
+    <Content Include="icon_icMaintenanceTools.ico" />
+    <EmbeddedResource Include="Images\repair_GDTError.png" />
+    <EmbeddedResource Include="Images\repair_cadenas.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Windows Kits\10\bin\x64\mt.exe" -managedassemblyname:$(TargetFileName) -nodependency -out:$(TargetFileName).manifest
+"C:\Program Files (x86)\Windows Kits\10\bin\x64\mt.exe" -manifest $(TargetFileName).manifest -outputresource:$(TargetFileName);2
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\sn.exe" -R $(TargetFileName) "$(SolutionDir)ic-jp-community.snk"
+cd $(ProjectDir)\obj\$(PlatformName)\$(ConfigurationName)
+"C:\Program Files (x86)\Windows Kits\10\bin\x64\mt.exe" -managedassemblyname:$(TargetFileName) -nodependency -out:$(TargetFileName).manifest
+"C:\Program Files (x86)\Windows Kits\10\bin\x64\mt.exe" -manifest $(TargetFileName).manifest -outputresource:$(TargetFileName);2
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\x64\sn.exe" -R $(TargetFileName) "$(SolutionDir)ic-jp-community.snk"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
